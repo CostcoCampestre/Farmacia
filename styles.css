@@ -1,0 +1,171 @@
+:root {
+  --primary:  #e31837;
+  --bg:       #f9fbfd;
+  --card:     #ffffff;
+  --txt:      #333333;
+  --shadow:   rgba(0,0,0,0.1);
+  --radius:   8px;
+  --fade-speed: 0.5s;
+  --dot:      12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg);
+  color: var(--txt);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+  overflow: hidden;
+}
+
+header {
+  background: var(--primary);
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+main {
+  padding: 20px;
+}
+
+/* ───────────────────── Carrusel (Fade) ───────────────────── */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px var(--shadow);
+  margin-bottom: 24px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--bg);
+  opacity: 0;
+  transition: opacity var(--fade-speed) ease-in-out;
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
+/* Controles anterior / siguiente */
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.controls button {
+  background: rgba(227,24,55,0.7);
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  pointer-events: all;
+  transition: background 0.3s;
+}
+
+.controls button:hover {
+  background: rgba(227,24,55,0.9);
+}
+
+/* Indicadores */
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.indicator {
+  width: var(--dot);
+  height: var(--dot);
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.indicator.active {
+  background: var(--primary);
+}
+
+/* ───────────────────── Detalles ───────────────────── */
+.detalle {
+  display: grid;
+  gap: 16px;
+}
+
+.detalle ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detalle li ul {
+  margin-top: 4px;
+  padding-left: 18px;
+}
+
+.detalle li ul li {
+  list-style: disc;
+}
+
+/* Pie de página */
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #666;
+}
+
+@media (min-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
