@@ -1,16 +1,22 @@
 :root {
-  --primary:      #e31837;
-  --bg:           #f9fbfd;
-  --card:         #ffffff;
-  --txt:          #333333;
-  --shadow:       rgba(0,0,0,0.1);
-  --radius:       8px;
-  --fade-speed:   0.5s;
-  --dot:          12px;
+  --primary: #e31837;
+  --bg: #f9fbfd;
+  --card: #ffffff;
+  --txt: #333;
+  --shadow: rgba(0, 0, 0, .1);
+  --radius: 8px;
+  --fade-speed: .5s;
+  --dot: 12px;
 }
 
-/* ───────── RESET BÁSICO ───────── */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -25,7 +31,7 @@ body {
   padding: 20px;
 }
 
-/* ───────── CONTENEDOR PRINCIPAL ───────── */
+/* Layout principal */
 .container {
   width: 100%;
   max-width: 800px;
@@ -41,17 +47,27 @@ header {
   text-align: center;
 }
 
-header h1 { color: #fff; font-size: 1.75rem; font-weight: 500; }
+header h1 {
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
 
-@media (min-width: 600px) { header h1 { font-size: 2rem; } }
+@media (min-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
 
-main { padding: 20px; }
+main {
+  padding: 20px;
+}
 
-/* ───────── CARRUSEL ───────── */
+/* Carrusel */
 .carousel-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 3/2;
   max-height: 500px;
   overflow: hidden;
   border-radius: var(--radius);
@@ -85,7 +101,7 @@ main { padding: 20px; }
   z-index: 2;
 }
 
-/* Botones ‹ › del carrusel */
+/* Botones ‹ › */
 .controls {
   position: absolute;
   inset: 0;
@@ -97,7 +113,7 @@ main { padding: 20px; }
 }
 
 .controls button {
-  background: rgba(227,24,55,0.7);
+  background: rgba(227, 24, 55, .7);
   border: none;
   color: #fff;
   font-size: 1.6rem;
@@ -105,10 +121,12 @@ main { padding: 20px; }
   border-radius: var(--radius);
   cursor: pointer;
   pointer-events: all;
-  transition: background 0.3s;
+  transition: background .3s;
 }
 
-.controls button:hover { background: rgba(227,24,55,0.9); }
+.controls button:hover {
+  background: rgba(227, 24, 55, .9);
+}
 
 /* Indicadores */
 .indicators {
@@ -124,12 +142,14 @@ main { padding: 20px; }
   background: #ccc;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background .3s;
 }
 
-.indicator.active { background: var(--primary); }
+.indicator.active {
+  background: var(--primary);
+}
 
-/* ───────── DETALLES ───────── */
+/* Detalles */
 .detalle {
   display: grid;
   gap: 16px;
@@ -141,25 +161,22 @@ main { padding: 20px; }
   flex-direction: column;
   gap: 8px;
   text-align: justify;
-  /*line-height: 1.50;*/
 }
 
-.detalle li ul {
-  margin-top: 4px;
-  padding-left: 18px;
+/* Footer */
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: .8rem;
+  color: #666;
 }
 
-.detalle li ul li { list-style: disc; }
-
-/* Pie de página */
-footer { margin-top: 20px; text-align: center; font-size: .5rem; color: #666; }
-
-/* ───────── MODAL ───────── */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, .8);
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -177,11 +194,10 @@ footer { margin-top: 20px; text-align: center; font-size: .5rem; color: #666; }
   max-height: 100%;
   object-fit: contain;
   border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
   z-index: 1;
 }
 
-/* Cerrar “X” */
 .modal-close {
   position: absolute;
   top: 15px;
@@ -193,13 +209,12 @@ footer { margin-top: 20px; text-align: center; font-size: .5rem; color: #666; }
   z-index: 3;
 }
 
-/* Flechas ─ estado normal / focus / active */
 .modal-prev,
 .modal-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,.3);
+  background: rgba(255, 255, 255, .3);
   border: none;
   color: #fff;
   font-size: 2.2rem;
@@ -208,41 +223,51 @@ footer { margin-top: 20px; text-align: center; font-size: .5rem; color: #666; }
   cursor: pointer;
   user-select: none;
   z-index: 2;
-  outline: none;
 }
 
-/* Hover SOLO en dispositivos con hover real (ratón) */
 @media (hover:hover) {
   .modal-prev:hover,
   .modal-next:hover {
-    background: rgba(255,255,255,.5);
+    background: rgba(255, 255, 255, .5);
   }
 }
 
 .modal-prev:focus,
 .modal-next:focus {
-  background: rgba(255,255,255,.3);   /* mismo color que normal */
+  background: rgba(255, 255, 255, .3);
 }
 
 .modal-prev:active,
 .modal-next:active {
-  background: rgba(255,255,255,.6);   /* feedback al presionar */
+  background: rgba(255, 255, 255, .6);
 }
 
-/* Posición escritorio */
-.modal-prev { left: -48px; }
-.modal-next { right: -48px; }
+.modal-prev {
+  left: -48px;
+}
 
-/* —— Break-point móvil/tablet —— */
+.modal-next {
+  right: -48px;
+}
+
 @media (max-width: 768px) {
-  .modal-inner { max-width: 96vw; max-height: 94vh; }
+  .modal-inner {
+    max-width: 96vw;
+    max-height: 94vh;
+  }
 
   .modal-prev,
   .modal-next {
-    background: rgba(0,0,0,.45);
+    background: rgba(0, 0, 0, .45);
     font-size: 1.9rem;
     padding: 8px 12px;
   }
-  .modal-prev { left: 8px; }
-  .modal-next { right: 8px; }
+
+  .modal-prev {
+    left: 8px;
+  }
+
+  .modal-next {
+    right: 8px;
+  }
 }
