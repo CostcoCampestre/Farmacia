@@ -153,47 +153,7 @@ main { padding: 20px; }
 footer { margin-top: 20px; text-align: center; font-size: .5rem; color: #666; }
 
 /* ───────── MODAL ───────── */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* Wrapper que referencia a las flechas */
-.modal-inner {
-  position: relative;
-  display: inline-flex;           
-  max-width: 90vw;
-  max-height: 90vh;
-}
-
-/* Imagen ampliada */
-.modal-content {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0,0,0,.2);
-  z-index: 1;
-}
-
-/* Cerrar “X” */
-.modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 40px;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
-  z-index: 3;
-}
-
-/* Flechas en el modal */
+/* Flechas en el modal  ─ Estado normal */
 .modal-prev,
 .modal-next {
   position: absolute;
@@ -207,62 +167,44 @@ footer { margin-top: 20px; text-align: center; font-size: .5rem; color: #666; }
   border-radius: var(--radius);
   cursor: pointer;
   user-select: none;
-  z-index: 2;                
+  z-index: 2;
+  outline: none;        /* quita borde azul en algunos navegadores */
 }
 
-.modal-prev:hover,
-.modal-next:hover { background: rgba(255,255,255,.5); }
-
-.modal-prev { left: -48px; }
-.modal-next { right: -48px; }
-
-/* ───────── Ajuste para pantallas muy angostas ─────────
-   Si la ventana es ≤ 380 px de ancho, las flechas se
-   colocan *dentro* de la imagen (superpuestas)          */
-@media (max-width: 768px) {
-  .modal-inner {
-    max-width: 96vw;         
-    max-height: 94vh;
-  }
-
-  .modal-prev,
-  .modal-next {
-    background: rgba(0,0,0,.45); 
-    font-size: 1.9rem;
-    padding: 8px 12px;
-  }
-
-  .modal-prev { left: 8px; }  
-  .modal-next { right: 8px; }
-  /* --- ESTADO NORMAL --- */
-.modal-prev,
-.modal-next {
-  background: rgba(255,255,255,.3);
-  /* …resto igual… */
-}
-
-/* --- ESTADO VISUAL (hover / focus / active) --- */
+/* Hover SOLO en dispositivos con hover real (ratón) */
 @media (hover:hover) {
-  /* Hover solo en dispositivos con soporte real de hover (ratón) */
   .modal-prev:hover,
   .modal-next:hover {
     background: rgba(255,255,255,.5);
   }
 }
 
-/* Si el botón queda en foco (por clic o teclado) lo mostramos igual que normal */
+/* Focus (tras el clic) = mismo fondo que estado normal */
 .modal-prev:focus,
 .modal-next:focus {
-  outline: none;                       /* quita el anillo azul */
-  background: rgba(255,255,255,.3);    /* mismo color que estado normal */
+  background: rgba(255,255,255,.3);
 }
 
-/* Opcional: breve feedback mientras se mantiene presionado */
+/* Active: feedback mientras mantienes presionado */
 .modal-prev:active,
 .modal-next:active {
-  background: rgba(255,255,255,.6);    /* un poquito más opaco sólo mientras esté presionado */
+  background: rgba(255,255,255,.6);
 }
 
+/* Posición default escritorio */
+.modal-prev { left: -48px; }
+.modal-next { right: -48px; }
 
+/* —— Break-point móvil/tablet —— */
+@media (max-width: 768px) {
+  .modal-inner       { max-width: 96vw; max-height: 94vh; }
+
+  .modal-prev,
+  .modal-next {
+    background: rgba(0,0,0,.45);   /* contraste sobre la imagen */
+    font-size: 1.9rem;
+    padding: 8px 12px;
+  }
+  .modal-prev { left: 8px; }
+  .modal-next { right: 8px; }
 }
-
