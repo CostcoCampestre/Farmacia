@@ -234,4 +234,35 @@ footer { margin-top: 20px; text-align: center; font-size: .5rem; color: #666; }
 
   .modal-prev { left: 8px; }  
   .modal-next { right: 8px; }
+  /* --- ESTADO NORMAL --- */
+.modal-prev,
+.modal-next {
+  background: rgba(255,255,255,.3);
+  /* …resto igual… */
 }
+
+/* --- ESTADO VISUAL (hover / focus / active) --- */
+@media (hover:hover) {
+  /* Hover solo en dispositivos con soporte real de hover (ratón) */
+  .modal-prev:hover,
+  .modal-next:hover {
+    background: rgba(255,255,255,.5);
+  }
+}
+
+/* Si el botón queda en foco (por clic o teclado) lo mostramos igual que normal */
+.modal-prev:focus,
+.modal-next:focus {
+  outline: none;                       /* quita el anillo azul */
+  background: rgba(255,255,255,.3);    /* mismo color que estado normal */
+}
+
+/* Opcional: breve feedback mientras se mantiene presionado */
+.modal-prev:active,
+.modal-next:active {
+  background: rgba(255,255,255,.6);    /* un poquito más opaco sólo mientras esté presionado */
+}
+
+
+}
+
