@@ -15,32 +15,52 @@
   let timer = null;
 
   /* ---------- Helpers ---------- */
-  const startAuto  = () => { timer = setInterval(() => show(index + 1), 5000); };
-  const stopAuto   = () => { clearInterval(timer); };
-  const show       = i => {
+  const startAuto = () => {
+    timer = setInterval(() => show(index + 1), 5000);
+  };
+  const stopAuto = () => {
+    clearInterval(timer);
+  };
+  const show = i => {
     index = (i + total) % total;
-    images.forEach((img,k)=>img.classList.toggle('active',k===index));
+    images.forEach((img, k) => img.classList.toggle('active', k === index));
     dotsWrap.querySelectorAll('.indicator')
-            .forEach((d,k)=>d.classList.toggle('active',k===index));
+            .forEach((d, k) => d.classList.toggle('active', k === index));
   };
 
   /* ---------- Dots dinámicos ---------- */
-  images.forEach((_,i)=>{
+  images.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.className = 'indicator' + (i ? '' : ' active');
     dot.dataset.i = i;
-    dot.addEventListener('click',()=>show(+dot.dataset.i));
+    dot.addEventListener('click', () => {
+      stopAuto();
+      show(+dot.dataset.i);
+      startAuto();
+    });
     dotsWrap.appendChild(dot);
   });
 
   /* ---------- Navegación carrusel ---------- */
-  prevBtn.addEventListener('click',()=>show(index-1));
-  nextBtn.addEventListener('click',()=>show(index+1));
-  if (total <= 1) { prevBtn.style.display = nextBtn.style.display = 'none'; }
+  prevBtn.addEventListener('click', () => {
+    stopAuto();
+    show(index - 1);
+    startAuto();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    stopAuto();
+    show(index + 1);
+    startAuto();
+  });
+
+  if (total <= 1) {
+    prevBtn.style.display = nextBtn.style.display = 'none';
+  }
 
   /* ---------- Modal ---------- */
-  images.forEach((img,i)=>{
-    img.addEventListener('click',()=>{
+  images.forEach((img, i) => {
+    img.addEventListener('click', () => {
       stopAuto();
       modalImg.src = img.src;
       modal.style.display = 'flex';
@@ -48,27 +68,36 @@
       toggleModalArrows();
     });
   });
-  const toggleModalArrows = ()=> {
-    const disp = total>1 ? 'block':'none';
+
+  const toggleModalArrows = () => {
+    const disp = total > 1 ? 'block' : 'none';
     prevModalBtn.style.display = nextModalBtn.style.display = disp;
   };
 
-  prevModalBtn.addEventListener('click',e=>{
-    e.stopPropagation(); show(index-1); modalImg.src = images[index].src;
+  prevModalBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    show(index - 1);
+    modalImg.src = images[index].src;
   });
-  nextModalBtn.addEventListener('click',e=>{
-    e.stopPropagation(); show(index+1); modalImg.src = images[index].src;
+  nextModalBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    show(index + 1);
+    modalImg.src = images[index].src;
   });
-  closeBtn.addEventListener('click',closeModal);
-  modal.addEventListener('click',e=>{ if (e.target === modal) closeModal(); });
-  window.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeModal();
+  });
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
 
-  function closeModal(){
-    modal.style.display='none';
+  function closeModal() {
+    modal.style.display = 'none';
     startAuto();
   }
 
   /* ---------- Inicio ---------- */
   show(0);
-  if(total>1) startAuto();
+  if (total > 1) startAuto();
 })();
