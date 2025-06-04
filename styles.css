@@ -219,7 +219,7 @@ footer { margin-top: 20px; text-align: center; font-size: .5rem; color: #666; }
 /* ───────── Ajuste para pantallas muy angostas ─────────
    Si la ventana es ≤ 380 px de ancho, las flechas se
    colocan *dentro* de la imagen (superpuestas)          */
-@media (max-width: 380px) {
+@media (max-width: 768px) {
   .modal-inner {
     max-width: 96vw;         
     max-height: 94vh;
