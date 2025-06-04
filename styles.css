@@ -141,6 +141,7 @@ main { padding: 20px; }
   flex-direction: column;
   gap: 8px;
   text-align: justify;
+  /*line-height: 1.50;*/
 }
 
 .detalle li ul {
