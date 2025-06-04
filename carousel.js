@@ -62,6 +62,10 @@
       // Capturamos el índice real de la imagen clicada:
       const clickedIndex = Array.prototype.indexOf.call(carouselImages, e.currentTarget);
       index = clickedIndex;
+
+    prevModal.style.display = 'block';
+    nextModal.style.display = 'block';
+
       modalImg.src = e.currentTarget.src;
       modal.style.display = 'flex';
     });
