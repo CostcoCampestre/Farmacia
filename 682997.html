@@ -31,7 +31,6 @@
       <!-- Carrusel -->
       <div class="carousel-wrapper">
         <div class="carousel" id="carousel">
-          <!-- Ejemplo con 3 imágenes; puedes poner más o menos según tu necesidad -->
           <img
             src="https://www.costco.com.mx/medias/sys_master/products/hd5/hab/207590281478174.webp"
             alt="Frasco 180 tabletas - Vista frontal"
@@ -90,12 +89,22 @@
     </main>
   </div>
 
+  <!-- Modal para mostrar imagen ampliada con flechas dentro de un wrapper -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <div class="modal-inner">
+      <button class="modal-prev" aria-label="Anterior imagen">‹</button>
+      <img class="modal-content" id="modalImage" alt="Imagen ampliada" />
+      <button class="modal-next" aria-label="Siguiente imagen">›</button>
+    </div>
+  </div>
+
   <!-- Pie de página con derechos de autor -->
   <footer>
-    © 2025 Aldo Moreno. Todos los derechos reservados.
+    © 2025. Todos los derechos reservados.
   </footer>
 
-  <!-- JavaScript del carrusel (actualizado para crear indicadores dinámicamente) -->
+  <!-- JavaScript del carrusel (actualizado) -->
   <script src="carousel.js"></script>
 </body>
 </html>
