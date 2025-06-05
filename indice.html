@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ÍndiceFarm</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Estilos personalizados para el índice -->
+  <style>
+    :root {
+      --accent: #e31837;
+      --bg-page: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --shadow-light: rgba(0, 0, 0, 0.05);
+      --shadow-strong: rgba(0, 0, 0, 0.15);
+      --radius: 8px;
+      --gap: 16px;
+    }
+
+    /* Reset rápido */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg-page);
+      color: var(--text-color);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Contenedor principal */
+    .container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px var(--shadow-light);
+      overflow: hidden;
+    }
+
+    /* Encabezado */
+    header {
+      background: var(--accent);
+      padding: 24px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #ffffff;
+      font-size: 1.75rem;
+      font-weight: 500;
+    }
+
+    @media (min-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    main {
+      padding: 24px;
+    }
+
+    /* Subtítulo del índice */
+    .subtitle {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: var(--gap);
+      text-align: center;
+    }
+
+    /* Grid de ítems */
+    .index-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--gap);
+    }
+
+    /* Cada tarjeta de enlace */
+    .index-item {
+      display: block;
+      background: var(--card-bg);
+      border: 1px solid #e0e0e0;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 4px var(--shadow-light);
+      padding: 20px;
+      text-decoration: none;
+      color: var(--text-color);
+      transition:
+        transform 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
+    }
+
+    .index-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px var(--shadow-strong);
+      border-color: var(--accent);
+    }
+
+    .index-item .index-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .index-item .index-text {
+      font-size: 1rem;
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777777;
+      padding: 16px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Índice de links</h1>
+    </header>
+
+    <main>
+      <p class="subtitle">Selecciona el número para abrir el producto correspondiente</p>
+      <div class="index-list">
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/523130.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">1</div>
+          <div class="index-text">523130.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/547062.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">2</div>
+          <div class="index-text">547062.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/634438.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">3</div>
+          <div class="index-text">634438.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/643338.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">4</div>
+          <div class="index-text">643338.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/654799.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">5</div>
+          <div class="index-text">654799.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/664844.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">6</div>
+          <div class="index-text">664844.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/667060.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">7</div>
+          <div class="index-text">667060.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/671558.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">8</div>
+          <div class="index-text">671558.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/674896.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">9</div>
+          <div class="index-text">674896.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/674909.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">10</div>
+          <div class="index-text">674909.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/675401.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">11</div>
+          <div class="index-text">675401.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/682997.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">12</div>
+          <div class="index-text">682997.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/685691.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">13</div>
+          <div class="index-text">685691.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/687838.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">14</div>
+          <div class="index-text">687838.html</div>
+        </a>
+
+        <a
+          class="index-item"
+          href="https://costcocampestre.github.io/Farmacia/688644.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="index-number">15</div>
+          <div class="index-text">688644.html</div>
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <footer>© 2025. Todos los derechos reservados.</footer>
+</body>
+</html>
