@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>688644 Biotina Naturagel</title>
+
+  <!-- Google Analytics v4 (único) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LN00WKZ4Z7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LN00WKZ4Z7');
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>688644 Biotina Naturagel</h1>
+    </header>
+
+    <main>
+      <!-- Carrusel -->
+      <div class="carousel-wrapper">
+        <div class="carousel" id="carousel">
+          <img
+            src="https://www.costco.com.mx/medias/sys_master/products/h5f/hd8/278294949232670.webp"
+            alt="Frasco 180 tabletas • Vista frontal"
+            class="active"
+            loading="lazy"
+          />
+          <img
+            src="https://www.costco.com.mx/medias/sys_master/products/h20/hd0/278294949298206.webp"
+            alt="Etiqueta • Detalle ingredientes"
+            loading="lazy"
+          />
+          <img
+            src="https://www.costco.com.mx/medias/sys_master/products/h82/h7b/278294949560350.webp"
+            alt="Etiqueta • Detalle ingredientes"
+            loading="lazy"
+          />
+        </div>
+        <div class="controls">
+          <button id="prevBtn" aria-label="Imagen anterior">‹</button>
+          <button id="nextBtn" aria-label="Imagen siguiente">›</button>
+        </div>
+      </div>
+
+      <!-- Indicadores -->
+      <div class="indicators" id="indicators"></div>
+      <br />
+
+      <!-- Descripción -->
+      <section class="detalle">
+        <h2>Características</h2>
+        <ul>
+          <li>Cada cápsula contiene:</li>
+          <ul style="list-style-type: disc; margin-left: 2.0rem;">
+            <li>Biotina (Vitamina B7) 300 mcg.</li>
+            <li>Acido pantotémico ( Vitamina B5) 1mg.</li>
+            <li>Vitamina E 200 mg.</li>
+            <li>Aceite de Aloe Vera 293 mg.</li>
+            <li>Carbohidratos 0.04 g.</li>
+            <li>Sodio 0.44 g.</li>
+          </ul>
+        <br />
+        <h2>Beneficios</h2>
+        <ul style="list-style-type: disc; margin-left: 2.0rem;">
+        <li><strong>Biotina y Ácido Pantoténico</strong>, estimulan el crecimiento del cabello, favoreciendo la formación de keratina, haciendo la estructura del cabello más resistente.</li>
+        <li><strong>Vitamina E</strong>, antioxidante, mejora la lucidez de la piel.</li>
+        <li><strong>Aloe Vera</strong>, mejora la hidratación del cabello, previene la caída al reducir la producción de sebo.</li>
+        </ul>
+
+        <br />
+        <h2>Recomendaciones</h2>
+        <ul style="list-style-type: disc; margin-left: 2.0rem;">
+          <li>Solo para mayores de 18 años.</li>
+          <li>Tomar una cápsula al día.</li>
+        </ul>
+        <br />
+
+        <h2>Información importante</h2>
+        <ul style="list-style-type: disc; margin-left: 2.0rem;">
+          <li>Este producto no es un medicamento.</li>
+          <li>El consumo de este producto es responsabilidad de quien lo recomienda y de quien lo usa.</li>
+          <li>Cualquier duda sobre el producto favor de pasar al área de farmacia.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+    <span class="modal-close" aria-label="Cerrar modal">&times;</span>
+    <div class="modal-inner">
+      <button class="modal-prev" aria-label="Anterior">‹</button>
+      <img class="modal-content" id="modalImage" alt="Imagen ampliada" />
+      <button class="modal-next" aria-label="Siguiente">›</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>© 2025. Todos los derechos reservados.</footer>
+
+  <!-- Scripts -->
+  <script src="carousel.js" defer></script>
+</body>
+</html>
