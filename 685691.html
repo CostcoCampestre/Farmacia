@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>685691 Bloom frutos rojos</title>
+
+  <!-- Google Analytics v4 (único) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LN00WKZ4Z7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-LN00WKZ4Z7');
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>685691 Bloom frutos rojos</h1>
+    </header>
+
+    <main>
+      <!-- Carrusel -->
+      <div class="carousel-wrapper">
+        <div class="carousel" id="carousel">
+          <img
+            src="https://www.costco.com.mx/medias/sys_master/products/h78/hf9/228406122512414.webp"
+            alt="Frasco 180 tabletas • Vista frontal"
+            class="active"
+            loading="lazy"
+          />
+          <img
+            src="https://www.costco.com.mx/medias/sys_master/products/h14/h0c/228406127689758.webp"
+            alt="Etiqueta • Detalle ingredientes"
+            loading="lazy"
+          />
+            <img
+            src="https://www.costco.com.mx/medias/sys_master/products/ha7/h41/228406128672798.webp"
+            alt="Etiqueta • Detalle ingredientes"
+            loading="lazy"
+          />
+        </div>
+        <div class="controls">
+          <button id="prevBtn" aria-label="Imagen anterior">‹</button>
+          <button id="nextBtn" aria-label="Imagen siguiente">›</button>
+        </div>
+      </div>
+
+      <!-- Indicadores -->
+      <div class="indicators" id="indicators"></div>
+      <br />
+
+      <!-- Descripción -->
+      <section class="detalle">
+        <h2>Características</h2>
+        <ul>
+          <li>Contiene:</li>
+          <ul style="list-style-type: disc; margin-left: 2.0rem;">
+            <li>Hidratos de carbono: 3.39g</li>
+            <li>Sodio: 5.8mg</li>
+            <li>Mezcla de fibras: avena, manzana, espirulina, espinaca, apio, brócoli, zanahoria, remolacha, arándano, fresa, frambuesa, semilla de uva, té matcha, entre otros.</li>
+            <li>Contiene enzimas digestivas como papaína y bromelina</li>
+          </ul>
+        <br />
+        <h2>Beneficios</h2>
+        <ul style="list-style-type: disc; margin-left: 2.0rem;">
+          <li>Suplemento que promueve la salud intestinal, mejora la digestión al tener enzimas digestivas. Favorece la absorción. Es rico en vitaminas provenientes de la mezcla de frutas y verduras.</li>
+          <li><strong>Alga espirulina</strong> mejora la memoria, la digestión y el fortalece el sistema inmunológico Matcha ayuda a mejorar el aspecto de la piel y uñas </li>
+          <li><strong>Lactobacillus rhamnosus</strong> previene la diarrea asociada al consumo de antibióticos. Fortalece sistema inmune.</li>
+          <li><strong>Bacillus coagulans lactospore</strong> produce ácido láctico para la degradación de alimentos, reduce la distensión intestinal</li>
+        </ul>
+
+        <br />
+        <h2>Recomendaciones</h2>
+        <ul style="list-style-type: disc; margin-left: 2.0rem;">
+          <li>Solo para mayores de 12 años.</li>
+          <li>Tomar 1 medida (5.77g) en 300ml de agua fría (favorece la disolución), mezclar y tomar inmediatamente. </li>
+        <li>Consumir 1 o 2 veces al día.</li>
+        </ul>
+        <br />
+
+        <h2>Información importante</h2>
+        <ul style="list-style-type: disc; margin-left: 2.0rem;">
+          <li>Este producto no es un medicamento.</li>
+          <li>El consumo de este producto es responsabilidad de quien lo recomienda y de quien lo usa.</li>
+          <li>Cualquier duda sobre el producto favor de pasar al área de farmacia.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+    <span class="modal-close" aria-label="Cerrar modal">&times;</span>
+    <div class="modal-inner">
+      <button class="modal-prev" aria-label="Anterior">‹</button>
+      <img class="modal-content" id="modalImage" alt="Imagen ampliada" />
+      <button class="modal-next" aria-label="Siguiente">›</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>© 2025. Todos los derechos reservados.</footer>
+
+  <!-- Scripts -->
+  <script src="carousel.js" defer></script>
+</body>
+</html>
